@@ -28,8 +28,8 @@
   --text-dim: #6B6760;
 
   /* Type */
-  --f-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-  --f-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --f-display: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --f-body: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 
   /* Spacing / sizing */
   --container: 1240px;
@@ -85,23 +85,22 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.05;
+  line-height: 1.15;
   margin: 0;
   color: var(--text);
-  font-variation-settings: "opsz" 72, "SOFT" 30;
 }
 
 h3, h4 {
-  font-variation-settings: "opsz" 36, "SOFT" 50;
-  line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 em {
   font-style: italic;
   color: var(--gold);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 p { margin: 0 0 1em; }
@@ -150,7 +149,6 @@ p { margin: 0 0 1em; }
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--f-body);
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.22em;
@@ -168,7 +166,6 @@ p { margin: 0 0 1em; }
 
 .section-title {
   font-size: clamp(2.15rem, 4.5vw, 3.75rem);
-  font-weight: 400;
   color: var(--text);
 }
 
@@ -294,9 +291,8 @@ p { margin: 0 0 1em; }
 .brand-name {
   font-family: var(--f-display);
   font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  font-variation-settings: "opsz" 36;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 .brand-sub {
   font-size: 0.68rem;
@@ -491,11 +487,10 @@ p { margin: 0 0 1em; }
 
 .hero-title {
   font-size: clamp(3rem, 9vw, 7rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
   margin: 0 0 1.5rem;
-  font-variation-settings: "opsz" 144, "SOFT" 20;
 }
 .hero-title-line {
   display: block;
@@ -503,6 +498,7 @@ p { margin: 0 0 1em; }
 }
 .hero-title-accent {
   font-style: italic;
+  font-weight: 500;
   color: var(--gold);
   animation-delay: 0.25s;
 }
@@ -511,7 +507,7 @@ p { margin: 0 0 1em; }
   font-family: var(--f-display);
   font-style: italic;
   font-size: clamp(1.25rem, 2vw, 1.55rem);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text);
   margin: 0 0 2rem;
   padding-bottom: 2rem;
@@ -714,14 +710,15 @@ p { margin: 0 0 1em; }
 .stat-num {
   font-family: var(--f-display);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text);
   line-height: 1;
-  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.02em;
 }
 .stat-plus, .stat-slash {
   font-family: var(--f-display);
   font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
   color: var(--gold);
   margin-left: 2px;
 }
@@ -1170,8 +1167,8 @@ p { margin: 0 0 1em; }
   font-family: var(--f-display);
   font-style: italic;
   font-size: clamp(1.25rem, 2vw, 1.65rem);
-  line-height: 1.5;
-  font-weight: 300;
+  line-height: 1.55;
+  font-weight: 400;
   color: var(--text);
   margin: 0 0 1.75rem;
   letter-spacing: -0.01em;
