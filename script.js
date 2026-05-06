@@ -19,7 +19,7 @@
   const mainNav = document.getElementById('mainNav');
   const navMoreToggle = document.getElementById('navMoreToggle');
   const navItemMore = navMoreToggle ? navMoreToggle.closest('.nav-item-more') : null;
-  const navLinks = mainNav.querySelectorAll('a');
+  const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
 
   const closeMoreMenu = () => {
     if (!navItemMore || !navMoreToggle) return;
@@ -28,6 +28,7 @@
   };
 
   const closeNav = () => {
+    if (!mainNav || !navToggle) return;
     mainNav.classList.remove('is-open');
     navToggle.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
@@ -35,15 +36,19 @@
     closeMoreMenu();
   };
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('is-open');
-    navToggle.classList.toggle('is-open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    if (!isOpen) closeMoreMenu();
-  });
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = mainNav.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (!isOpen) closeMoreMenu();
+    });
 
-  navLinks.forEach(a => a.addEventListener('click', closeNav));
+    navLinks.forEach(a => a.addEventListener('click', closeNav));
+  }
 
   if (navMoreToggle && navItemMore) {
     navMoreToggle.addEventListener('click', () => {
